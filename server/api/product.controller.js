@@ -64,8 +64,46 @@ var getAllProduct = function(req, res){
     });
 }
 
+var saveSelectedProduct = function(req, res){
+    var context = {
+        req: req,
+        body: req.body 
+    }
+    product_lib.saveSelectedProduct(context, function (e, r){
+        return res.json (e || r);
+    });
+}
+
+
+var deleteSelectedProduct = function(req, res){
+    var context = {
+        req: req,
+        body: req.body
+    }
+    product_lib.deleteSelectedProduct(context, function (e, r){
+        return res.json (e || r);
+    });
+}
+
+
+var getSelectedProduct = function(req, res){
+    // console.log("context",req.params.id);
+    var context = {
+        req: req,
+        body: req.body
+    }
+    product_lib.getSelectedProduct(context, function (e, r){
+        return res.json (e || r);
+    });
+}
+
+
 exports.saveProduct = saveProduct;
 exports.allProduct = allProduct;
 exports.getProduct = getProduct;
 exports.deleteProduct = deleteProduct;
 exports.getAllProduct = getAllProduct;
+exports.saveSelectedProduct = saveSelectedProduct;
+exports.deleteSelectedProduct = deleteSelectedProduct;
+exports.getSelectedProduct = getSelectedProduct;
+
