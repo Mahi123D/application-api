@@ -7,12 +7,11 @@ var doctorModel = mongoose.model("register");
 
 
 var registerUser = function (req, res) {
-console.log("reqqqqqq",req)
     var context = {
         req: req,
         body: req.body 
     }
-
+console.log("context",context);
     register_lib.registerUser(context, function (e, r){
         return res.json (e || r);
     });

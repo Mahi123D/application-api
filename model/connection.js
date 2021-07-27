@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/register',{useNewUrlParser:true , useUnifiedTopology: true },(error)=>{
+mongoose.connect('mongodb://localhost:27017/shippingcart',{useNewUrlParser:true , useUnifiedTopology: true },(error)=>{
 if(!error){
   console.log("mongodb coonected")
 }  
